@@ -1,0 +1,30 @@
+import mongoose from "mongoose"
+
+
+const userShema = new mongoose.Schema({
+    email:{
+        type:String,
+        required:true,
+        unique:true
+    },
+    name:{
+        type:String,
+        required:true
+    },
+    image:{
+        type:String,
+        required:true
+    },
+    clerkid :{
+        required :true,
+        unique:true,
+        type:String,
+
+    }
+
+},{timestamps:true})
+
+
+
+
+export const User = mongoose.model('User', userShema)
