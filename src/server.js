@@ -3,8 +3,9 @@ import dotenv from 'dotenv'
 import { connectDB } from "./config/db.config.js"
 import { clerkMiddleware} from '@clerk/express'
 
-import { functions,inngest } from "./config/inngest.config.js"
+import { functions } from "./config/inngest.config.js"
 import {serve} from "inngest/express"
+import { Inngest } from "inngest"
 
 
 
@@ -16,7 +17,7 @@ const app = express()
 app.use(clerkMiddleware())
 app.use(express.json())
 
-app.use ("/api/inngest", serve({client:inngest,functions}))
+app.use ("/api/inngest", serve({client:Inngest ,functions}))
 
 
 app.get('/', (req,res) => {
