@@ -3,7 +3,7 @@ import dotenv from "dotenv";
 
 dotenv.config()
 
-const streamChat = StreamChat.getInstance(process.env.STREAM_API_KEY,process.env.STREAM_API_CLIENT)
+const streamClient = StreamChat.getInstance(process.env.STREAM_API_KEY,process.env.STREAM_API_CLIENT)
 
 
 
