@@ -2,7 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import { connectDB } from "./config/db.config.js";
 import { clerkMiddleware } from "@clerk/express";
-
+import chatRoutes from "./routes/chat.route.js"
 import { functions, inngest } from "./config/inngest.config.js";
 import { serve } from "inngest/express";
 
@@ -23,6 +23,10 @@ app.use(
     functions,
   })
 );
+
+
+app.use("/api/chat", chatRoutes)
+
 
 app.get("/", (req, res) => {
   res.send("hello world");
